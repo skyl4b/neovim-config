@@ -44,6 +44,8 @@ opt.confirm = false -- Confirm to save changes before exiting modified buffer
 opt.gdefault = true
 -- Set maximum columns to search for highlighting (default is slow)
 opt.synmaxcol = 150
+-- Set a short timeout for key sequences
+opt.timeoutlen = 100
 
 -- Functions
 --

@@ -3,19 +3,22 @@ return {
   opts = {
     mappings = {
       -- Add surrounding in Normal and Visual modes
-      add = "gsa",
+      add = "Sa",
       -- Delete surrounding
-      delete = "gsd",
+      delete = "Sd",
       -- Find surrounding (to the right)
-      find = "gsf",
+      find = "Sf",
       -- Find surrounding (to the left)
-      find_left = "gsF",
+      find_left = "SF",
       -- Highlight surrounding
-      highlight = "gsh",
+      highlight = "Sh",
       -- Replace surrounding
-      replace = "gsr",
+      replace = "Sr",
       -- Update 'n_lines'
-      update_n_lines = "gsn",
+      update_n_lines = "Sn",
     },
+
+    -- Disable showing non-error feedback
+    silent = true,
   }
 }

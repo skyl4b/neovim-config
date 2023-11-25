@@ -56,21 +56,20 @@ return {
     float_opts = { border = "rounded" },
   },
   keys = {
-    { "<Leader>T", false, mode = { "n", "v" }, desc = "Terminal" },
     {
-      "<Leader>Tf",
+      "<leader>tt",
       "<cmd>ToggleTerm direction=float<cr>",
       mode = { "n", "v" },
       desc = "ToggleTerm float",
     },
     {
-      "<Leader>Th",
+      "<leader>th",
       "<cmd>ToggleTerm size=10 direction=horizontal<cr>",
       mode = { "n", "v" },
       desc = "ToggleTerm horizontal split",
     },
     {
-      "<Leader>Tv",
+      "<leader>tv",
       "<cmd>ToggleTerm size=80 direction=vertical<cr>",
       mode = { "n", "v" },
       desc = "ToggleTerm vertical split",
@@ -90,7 +89,7 @@ return {
 
     -- Apps
     {
-      "<Leader>Tn",
+      "<leader>tn",
       function()
         toggle_term_cmd("node")
       end,
@@ -98,7 +97,7 @@ return {
       desc = "ToggleTerm node",
     },
     {
-      "<Leader>Tu",
+      "<leader>tu",
       function()
         toggle_term_cmd("gdu")
       end,
@@ -106,7 +105,7 @@ return {
       desc = "ToggleTerm gdu",
     },
     {
-      "<Leader>Tb",
+      "<leader>tb",
       function()
         toggle_term_cmd("btm")
       end,
@@ -114,7 +113,7 @@ return {
       desc = "ToggleTerm bottom",
     },
     {
-      "<Leader>Tp",
+      "<leader>tp",
       function()
         toggle_term_cmd("python3")
       end,
@@ -122,12 +121,20 @@ return {
       desc = "ToggleTerm python",
     },
     {
-      "<Leader>Tc",
+      "<leader>tc",
       function()
         toggle_term_cmd("qalc")
       end,
       mode = { "n", "v" },
       desc = "ToggleTerm qalc",
+    },
+    {
+      "<leader>tD",
+      function()
+        toggle_term_cmd("lazydocker")
+      end,
+      mode = { "n", "v" },
+      desc = "ToggleTerm lazydocker",
     },
   },
 }

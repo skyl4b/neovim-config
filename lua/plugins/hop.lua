@@ -73,7 +73,7 @@ return {
             extend_visual = true,
           })
         end,
-        mode = { "n" },
+        mode = { "v" },
         desc = "Hop lines down",
       },
       {
@@ -85,7 +85,7 @@ return {
             extend_visual = true,
           })
         end,
-        mode = { "n" },
+        mode = { "v" },
         desc = "Hop lines up",
       },
     },

@@ -1,10 +1,4 @@
 -- Better movement by subwords
--- positions vim's `w` will move to
--- local myVariableName = FOO_BAR_BAZ
---    ^              ^ ^
---
--- positions spider's `w` will move to
--- local myVariableName = FOO_BAR_BAZ
 return {
   "chrisgrieser/nvim-spider",
   keys = {

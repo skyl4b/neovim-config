@@ -21,3 +21,23 @@ map({ "n", "v" }, "<leader>P", '"+P', {
   noremap = true,
   silent = true,
 })
+
+-- Terminal bindings
+--
+-- Ignore Shift + Space, I press it accidentally all the time
+map("t", "<S-Space>", "<Space>", {
+  desc = "Space",
+  noremap = true,
+  silent = true,
+})
+-- Escape to normal mode
+map("t", "jk", [[<C-\><C-n>]], {
+  desc = "Normal mode",
+  noremap = true,
+  silent = true,
+})
+map("t", "kj", [[<C-\><C-n>]], {
+  desc = "Normal mode",
+  noremap = true,
+  silent = true,
+})

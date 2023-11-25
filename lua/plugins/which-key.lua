@@ -9,6 +9,7 @@ return {
       ["<leader>a"] = { name = "+AI" },
       ["<leader>t"] = { name = "+terminal" },
       ["<leader>T"] = { name = "+test" },
+      ["s"] = { name = "+hop", mode = { "n", "v", "o" } },
     },
   },
 }

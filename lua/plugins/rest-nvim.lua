@@ -8,9 +8,9 @@ return {
       "RestNvimPreview",
       "RestNvimLast",
     },
-    keys = {
-      { "<Leader>rr", "<Plug>RestNvim", desc = "Run request" },
-    },
     opts = {},
+    keys = {
+      { "<leader>rR", "<Plug>RestNvim", ft = "http", desc = "Run request" },
+    },
   },
 }

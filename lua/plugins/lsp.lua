@@ -35,9 +35,10 @@ return {
 
               -- Enable some ruff rules
               "--select",
-              "I,N,UP,YTT,ASYNC,B,A,C4,T10,DJ,EXE,FA,ISC,ICN001,RET,SLOT,"
-                .. "SIM,TCH,INT,ARG,PTH,TD001,TD004,TD005,TD006,TD007,"
-                .. "PD,PL,FLY,NPY,AIR,PERF,FURB,RUF",
+              "F,W,E,I,N,D,UP,YTT,TRIO,ASYNC,B,A,COM,C4,DTZ,T10,DJ,EXE,FA,ISC,ICN001,G,INP,"
+                .. "PIE,Q,RSE,RET,SLOT,SIM,TCH,INT,ARG,PTH,TD001,TD004,TD005,TD006,"
+                .. "TD007,PD,PL,TRY004,TRY200,TRY201,TRY302,TRY400,TRY401,FLY,NPY,AIR,"
+                .. "PERF,FURB,LOG,RUF",
             },
           },
         },

@@ -6,10 +6,12 @@ return {
 
     -- Customize key mappings
     defaults = {
+      ["s"] = { name = "+hop", mode = { "n", "v", "o" } },
+
       ["<leader>a"] = { name = "+AI" },
       ["<leader>t"] = { name = "+terminal" },
       ["<leader>T"] = { name = "+test" },
-      ["s"] = { name = "+hop", mode = { "n", "v", "o" } },
+      ["<leader>r"] = { name = "+run" },
     },
   },
 }

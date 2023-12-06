@@ -26,6 +26,7 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
+      -- Set mapping
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -51,6 +52,23 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+      })
+
+      -- HACK: Cancel the snippet session when leaving insert mode.
+      local unlink_group = vim.api.nvim_create_augroup("UnlinkSnippet", {})
+      vim.api.nvim_create_autocmd("ModeChanged", {
+        group = unlink_group,
+        -- When going from select mode to normal and when leaving insert mode
+        pattern = { "s:n", "i:*" },
+        callback = function(event)
+          if
+            luasnip.session
+            and luasnip.session.current_nodes[event.buf]
+            and not luasnip.session.jump_active
+          then
+            luasnip.unlink_current()
+          end
+        end,
       })
     end,
   },

@@ -11,16 +11,16 @@ return {
     -- Set mappings
     mappings = {
       -- Toggle comment for Normal and Visual modes
-      comment = "gc",
+      comment = "X",
 
       -- Toggle comment on current line
-      comment_line = "gcc",
+      comment_line = "X<space>",
 
       -- Toggle comment on visual selection
-      comment_visual = "gc",
+      comment_visual = "X",
 
       -- Define 'comment' textobject (like `dgc` - delete whole comment block)
-      textobject = "c",
+      textobject = "X",
     },
   },
 }

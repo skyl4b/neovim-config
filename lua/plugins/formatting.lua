@@ -14,41 +14,39 @@ return {
       lua = { "stylua" },
       typst = { "typstfmt" },
       sh = { "shfmt" },
+      rust = { "rustfmt" },
     },
 
     -- Configure formatters
     formatters = {
       injected = { options = { ignore_errors = true } },
 
+      -- Python
       ruff_format = {
-        -- Set default line length
-        "--line-length",
-        "79",
-
-        -- Keep base flags
-        "format",
-        "--stdin-filename",
-        "$FILENAME",
-        "-",
-      },
-
-      ruff_fix = {
         args = {
+          -- Keep base args
+          "format",
+
           -- Set default line length
           "--line-length",
           "79",
 
-          -- Fix import order
-          "--select",
-          "I",
-
-          -- Keep base flags
-          "--fix",
-          "-e",
-          "-n",
+          -- Keep base args
           "--stdin-filename",
           "$FILENAME",
           "-",
+        },
+      },
+
+      ruff_fix = {
+        prepend_args = {
+          -- Set default line length
+          "--line-length",
+          "79",
+
+          -- Only fix import order
+          "--select",
+          "I",
         },
       },
     },

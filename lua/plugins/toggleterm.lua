@@ -121,7 +121,15 @@ return {
       desc = "ToggleTerm python",
     },
     {
-      "<leader>tc",
+      "<leader>tj",
+      function()
+        toggle_term_cmd("jupyter-console --no-confirm-exit")
+      end,
+      mode = { "n", "v" },
+      desc = "ToggleTerm Jupyter",
+    },
+    {
+      "<leader>tq",
       function()
         toggle_term_cmd("qalc")
       end,

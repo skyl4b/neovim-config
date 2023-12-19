@@ -46,6 +46,8 @@ opt.gdefault = true
 opt.synmaxcol = 150
 -- Set a short timeout for key sequences
 opt.timeoutlen = 100
+-- Setup no concealing
+opt.conceallevel = 0
 
 -- Functions
 --

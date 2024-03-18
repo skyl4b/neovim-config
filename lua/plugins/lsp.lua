@@ -86,8 +86,12 @@ return {
       clangd = {},
       -- Latex
       texlab = {},
+      -- Gleam
+      gleam = {},
       -- Rust
       -- Configured by rusttools
+      -- General
+      typos_lsp = {},
     },
   },
 }

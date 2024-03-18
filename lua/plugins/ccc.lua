@@ -2,6 +2,10 @@ return {
   { "NvChad/nvim-colorizer.lua", enabled = false },
   {
     "uga-rosa/ccc.nvim",
+    -- Disabled for now, need to investigate
+    -- how to disable the lsp-highlighter as it breaks
+    -- some LSPs and you can't disable for specific LSPs
+    enabled = false,
     event = "LazyFile",
     cmd = {
       "CccPick",

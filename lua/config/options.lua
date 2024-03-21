@@ -49,6 +49,13 @@ opt.timeoutlen = 100
 -- Setup no concealing
 opt.conceallevel = 0
 
+-- Custom filetypes
+vim.filetype.add {
+  filename = {
+    ["docker-compose.yaml"] = "yaml.docker-compose",
+  },
+}
+
 -- Functions
 --
 -- Enable lua compilation

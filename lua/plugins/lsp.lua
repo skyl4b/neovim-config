@@ -90,6 +90,8 @@ return {
       gleam = {},
       -- Rust
       -- Configured by rusttools
+      -- XML
+      lemminx = {},
       -- General
       typos_lsp = {},
     },

@@ -15,6 +15,7 @@ return {
       typst = { "typstfmt" },
       sh = { "shfmt" },
       rust = { "rustfmt" },
+      just = { "just" },
     },
 
     -- Configure formatters

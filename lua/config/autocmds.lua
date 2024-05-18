@@ -16,3 +16,14 @@
 --     vim.cmd("LspStop")
 --   end,
 -- })
+vim.filetype.add({
+  extension = {
+    sdf = "xml",
+    urdf = "xml",
+    world = "xml",
+  },
+  filename = {
+    ["justfile"] = "just",
+  },
+  pattern = {},
+})

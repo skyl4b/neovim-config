@@ -48,6 +48,15 @@ return {
           end
         end, { "i", "s" }),
       })
+
+      -- HACK: Cancel the snippet session when leaving insert mode
+      local map = vim.keymap.set
+      map({ "i", "s" }, "<Esc>", function()
+        if vim.snippet.active() then
+          vim.snippet.stop()
+        end
+        return "<ESC>"
+      end, { expr = true })
     end,
   },
 }

@@ -4,12 +4,28 @@
 
 -- Globals
 --
+local g = vim.g
+
 -- Config leaders
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+g.mapleader = " "
+g.maplocalleader = ","
 
 -- Disable autoformat
-vim.g.autoformat = false
+g.autoformat = false
+
+-- HACK: force wl-clipboard for now as OSC52 is not fully supported by wezterm
+g.clipboard = {
+  name = "wl-clipboard",
+  copy = {
+    ["+"] = { "wl-copy", "--type", "text/plain" },
+    ["*"] = { "wl-copy", "--primary", "--type", "text/plain" },
+  },
+  paste = {
+    ["+"] = { "wl-paste", "--no-newline" },
+    ["*"] = { "wl-paste", "--no-newline", "--primary" },
+  },
+  cache_enabled = 1,
+}
 
 -- General options
 --
@@ -50,11 +66,14 @@ opt.timeoutlen = 100
 opt.conceallevel = 0
 
 -- Custom filetypes
-vim.filetype.add {
+--
+local filetype = vim.filetype
+
+filetype.add({
   filename = {
     ["docker-compose.yaml"] = "yaml.docker-compose",
   },
-}
+})
 
 -- Functions
 --

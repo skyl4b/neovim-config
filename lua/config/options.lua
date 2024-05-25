@@ -15,14 +15,18 @@ g.autoformat = false
 
 -- HACK: force wl-clipboard for now as OSC52 is not fully supported by wezterm
 g.clipboard = {
-  name = "wl-clipboard",
+  name = "OSC 52",
   copy = {
-    ["+"] = { "wl-copy", "--type", "text/plain" },
-    ["*"] = { "wl-copy", "--primary", "--type", "text/plain" },
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
   },
   paste = {
-    ["+"] = { "wl-paste", "--no-newline" },
-    ["*"] = { "wl-paste", "--no-newline", "--primary" },
+    ["+"] = function()
+      return {}
+    end,
+    ["*"] = function()
+      return {}
+    end,
   },
   cache_enabled = 1,
 }

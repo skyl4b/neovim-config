@@ -9,10 +9,12 @@ return {
       nix = { "nix", "statix" },
       lua = { "luacheck" },
       dockerfile = { "hadolint" },
-      -- markdown = { "markdownlint" },
+      -- gitcommit = { "commitlint" },
     },
 
     -- Configure linters
-    linters = {},
+    linters = {
+      cmakelint = { cmd = "cmake-lint" },
+    },
   },
 }

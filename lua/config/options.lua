@@ -31,6 +31,11 @@ g.clipboard = {
   cache_enabled = 1,
 }
 
+-- LazyVim specific globals
+--
+g.lazyvim_python_lsp = "pyright"
+g.lazyvim_python_ruff = "ruff"
+
 -- General options
 --
 local opt = vim.opt

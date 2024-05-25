@@ -6,7 +6,12 @@ return {
 
     -- Define formatters
     formatters_by_ft = {
+      -- Trim whitespace on all files without a specific formatter
       ["_"] = { "trim_whitespace" },
+      -- Format tree-sitter injected languages
+      ["*"] = { "injected" },
+
+      -- Language specific formatters
       nix = { "nixpkgs_fmt" },
       python = { "ruff_format", "ruff_fix" },
       -- Only run the first available formatter

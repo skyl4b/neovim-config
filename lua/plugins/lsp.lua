@@ -23,7 +23,42 @@ return {
   opts = {
     servers = {
       -- Python
-      pyright = {},
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            -- Use ruff for organizing imports
+            disableOrganizeImports = true,
+
+            -- Diagnostic settings
+            analysis = {
+              -- Enable auto-import
+              autoImportCompletions = true,
+              -- Automatically add common search paths
+              autoSearchPaths = true,
+              -- Diagnostic only on open files
+              diagnosticMode = "openFilesOnly",
+              -- Attempt to determine the types of variables
+              -- even without type stubs
+              useLibraryCodeForTypes = true,
+              -- Override some diagnostic rules
+              diagnosticSeverityOverrides = {
+                -- Allow missing type stubs, some libraries don't have them
+                reportMissingTypeStubs = false,
+                -- Allow explicit any
+                reportAny = false,
+                -- Allow unknown types
+                reportUnknownParameterType = false,
+                reportUnknownArgumentType = false,
+                reportUnknownLambdaType = false,
+                reportUnknownVariableType = false,
+                reportUnknownMemberType = false,
+                -- Allow unused returns
+                reportUnusedCallResult = false,
+              },
+            },
+          },
+        },
+      },
       ruff = {
         init_options = {
           settings = {

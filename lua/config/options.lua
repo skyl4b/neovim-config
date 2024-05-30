@@ -33,7 +33,7 @@ g.clipboard = {
 
 -- LazyVim specific globals
 --
-g.lazyvim_python_lsp = "pyright"
+g.lazyvim_python_lsp = "basedpyright"
 g.lazyvim_python_ruff = "ruff"
 
 -- General options

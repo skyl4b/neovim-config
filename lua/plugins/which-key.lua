@@ -8,10 +8,8 @@ return {
     defaults = {
       ["s"] = { name = "+hop", mode = { "n", "v", "o" } },
 
-      ["<leader>a"] = { name = "+AI" },
       ["<leader>t"] = { name = "+terminal" },
       ["<leader>T"] = { name = "+test" },
-      ["<leader>r"] = { name = "+run" },
     },
   },
 }

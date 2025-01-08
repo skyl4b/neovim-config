@@ -1,6 +1,20 @@
 return {
   -- Disable builtin flash plugin
-  { "folke/flash.nvim", enabled = false },
+  {
+    "folke/flash.nvim",
+    keys = {
+      -- disable the default flash keymap
+      { "s", mode = { "n", "x", "o" }, false },
+      {
+        "ss",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+    },
+  },
 
   -- Add hop over it
   {
@@ -88,6 +102,26 @@ return {
         end,
         mode = { "n", "v", "o" },
         desc = "Hop backward before",
+      },
+    },
+  },
+
+  -- Add group in which-key
+  {
+    "folke/which-key.nvim",
+    opts = {
+      triggers = {
+        -- TODO: verify conflicts on extensions
+        -- if something similar is done for another
+        -- plugin
+        { "<auto>", mode = "nixsotc" },
+        { "s", mode = { "n", "x", "o" } },
+      },
+      spec = {
+        {
+          mode = { "n", "x", "o" },
+          { "s", "", group = "hop" },
+        },
       },
     },
   },

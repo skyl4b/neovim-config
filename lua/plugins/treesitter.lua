@@ -6,7 +6,7 @@ return {
     ignore_install = { "comment" },
     disable = { "comment" },
 
-    -- Make sure regex based hightlighting is off
+    -- Make sure regex based highlighting is off
     additional_vim_regex_highlighting = false,
   },
 }

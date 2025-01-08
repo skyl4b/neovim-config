@@ -32,7 +32,7 @@ return {
             -- Diagnostic settings
             analysis = {
               -- Enable auto-import
-              autoImportCompletions = true,
+              autoImportCompletions = false,
               -- Automatically add common search paths
               autoSearchPaths = true,
               -- Diagnostic only on open files
@@ -88,8 +88,11 @@ return {
       lua_ls = {
         settings = {
           Lua = {
+            runtime = { version = "LuaJIT" },
+            hint = { enable = true },
             workspace = {
               checkThirdParty = false,
+              library = { vim.env.VIMRUNTIME },
             },
             completion = {
               callSnippet = "Replace",
@@ -119,7 +122,7 @@ return {
       -- Grammar
       -- ltex = {},
       -- Typst
-      typst_lsp = {},
+      tinymist = {},
       -- C / C++ / CUDA / Objective-C / Objective-C++
       clangd = {},
       -- Latex

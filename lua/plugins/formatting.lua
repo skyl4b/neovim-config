@@ -13,7 +13,6 @@ return {
 
       -- Language specific formatters
       nix = { "nixpkgs_fmt" },
-      python = { "ruff_format", "ruff_fix" },
       -- Only run the first available formatter
       javascript = { { "prettierd", "prettier" } },
       lua = { "stylua" },
@@ -26,35 +25,6 @@ return {
     -- Configure formatters
     formatters = {
       injected = { options = { ignore_errors = true } },
-
-      -- Python
-      ruff_format = {
-        args = {
-          -- Keep base args
-          "format",
-
-          -- Set default line length
-          "--line-length",
-          "79",
-
-          -- Keep base args
-          "--stdin-filename",
-          "$FILENAME",
-          "-",
-        },
-      },
-
-      ruff_fix = {
-        prepend_args = {
-          -- Set default line length
-          "--line-length",
-          "79",
-
-          -- Only fix import order
-          "--select",
-          "I",
-        },
-      },
     },
   },
 }

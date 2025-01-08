@@ -13,7 +13,7 @@ g.maplocalleader = ","
 -- Disable autoformat
 g.autoformat = false
 
--- HACK: force wl-clipboard for now as OSC52 is not fully supported by wezterm
+-- HACK: force wl-clipboard for now as OSC52 is not fully supported
 g.clipboard = {
   name = "OSC 52",
   copy = {
@@ -73,16 +73,6 @@ opt.synmaxcol = 150
 opt.timeoutlen = 100
 -- Setup no concealing
 opt.conceallevel = 0
-
--- Custom filetypes
---
-local filetype = vim.filetype
-
-filetype.add({
-  filename = {
-    ["docker-compose.yaml"] = "yaml.docker-compose",
-  },
-})
 
 -- Functions
 --

@@ -4,11 +4,11 @@
 -- Helper function for mappings
 local map = vim.keymap.set
 
-map("n", "<leader>R", ":%!grex -", {
+map("n", "<leader>$", ":%!grex -", {
   desc = "Generate RegEx using file",
   noremap = true,
 })
-map("v", "<leader>R", ":'<'>!grex -", {
+map("v", "<leader>$", ":'<'>!grex -", {
   desc = "Generate RegEx using selection",
   noremap = true,
 })

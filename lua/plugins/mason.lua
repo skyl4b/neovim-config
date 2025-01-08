@@ -1,4 +1,4 @@
--- Disable mason, install things with nix
+-- Disable mason, install things manually
 return {
   {
     "williamboman/mason.nvim",

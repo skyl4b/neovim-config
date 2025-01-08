@@ -56,6 +56,7 @@ return {
     float_opts = { border = "rounded" },
   },
   keys = {
+    { "<leader>t", desc = "terminal" },
     {
       "<leader>tt",
       "<cmd>ToggleTerm direction=float<cr>",

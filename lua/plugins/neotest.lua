@@ -2,6 +2,7 @@ return {
   "nvim-neotest/neotest",
   keys = function(_, _)
     return {
+      { "<leader>T", desc = "test" },
       {
         "<leader>Tt",
         function()

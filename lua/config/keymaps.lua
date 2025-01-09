@@ -22,17 +22,16 @@ map({ "n", "v" }, "<leader>P", '"+P', {
   silent = true,
 })
 -- Undo / Redo
-map({ "n", "v" }, "u", ':undo<CR>', {
+map({ "n", "v" }, "u", ":undo<CR>", {
   desc = "Undo",
   noremap = true,
   silent = true,
 })
-map({ "n", "v" }, "U", ':redo<CR>', {
+map({ "n", "v" }, "U", ":redo<CR>", {
   desc = "Redo",
   noremap = true,
   silent = true,
 })
-
 
 -- Terminal bindings
 --

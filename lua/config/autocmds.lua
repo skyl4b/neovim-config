@@ -14,7 +14,12 @@ vim.filetype.add({
   },
   filename = {
     ["justfile"] = "just",
+
+    -- Docker-compose filetype
+    ["docker-compose.yml"] = "yaml.docker-compose",
     ["docker-compose.yaml"] = "yaml.docker-compose",
+    ["compose.yml"] = "yaml.docker-compose",
+    ["compose.yaml"] = "yaml.docker-compose",
   },
   pattern = {},
 })

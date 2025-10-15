@@ -51,7 +51,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.tex" },
     { import = "lazyvim.plugins.extras.lang.toml" },
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
     -- Custom plugin overrides (in the plugin directory)
@@ -67,6 +67,7 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
+  ui = { border = "rounded" },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update

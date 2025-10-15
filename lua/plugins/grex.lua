@@ -5,11 +5,11 @@
 local map = vim.keymap.set
 
 map("n", "<leader>$", ":%!grex -", {
-  desc = "Generate RegEx using file",
+  desc = "Regex from file",
   noremap = true,
 })
 map("v", "<leader>$", ":'<'>!grex -", {
-  desc = "Generate RegEx using selection",
+  desc = "Regex from selection",
   noremap = true,
 })
 

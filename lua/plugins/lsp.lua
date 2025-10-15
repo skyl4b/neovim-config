@@ -1,3 +1,6 @@
+-- Lsp configuration utilities
+local util = require("lspconfig.util")
+
 return {
   "neovim/nvim-lspconfig",
   init = function()
@@ -25,6 +28,13 @@ return {
       -- Python
       basedpyright = {
         settings = {
+          python = {
+            -- Set explicit python path
+            pythonPath = vim.trim(
+              vim.fn.system("which python || which python3")
+            ) or "/usr/bin/python3",
+          },
+
           basedpyright = {
             -- Use ruff for organizing imports
             disableOrganizeImports = true,
@@ -46,6 +56,13 @@ return {
                 reportMissingTypeStubs = false,
                 -- Allow explicit any
                 reportAny = false,
+                reportExplicitAny = false,
+                -- Allow implicit overrides (most python versions don't support it)
+                reportImplicitOverride = false,
+                -- Allow implicit string concatenation
+                -- basedpyright is too restrictive, ruff checks are
+                -- better for this
+                reportImplicitStringConcatenation = false,
                 -- Allow unknown types
                 reportUnknownParameterType = false,
                 reportUnknownArgumentType = false,
@@ -75,10 +92,11 @@ return {
                 "D406", "D407", "D408", "D409", "D410", "D411", "D412", "D413", "D414",
                 "D415", "D416", "D417", "D418", "D419", "UP", "YTT", "TRIO", "ASYNC",
                 "B", "A", "COM", "C4", "DTZ", "T10", "DJ", "EXE", "FA", "ISC", "ICN001",
-                "G010", "G101", "G201", "G202", "INP", "PIE", "Q", "RSE", "RET", "SLOT",
+                "G010", "G101", "G201", "G202", "PIE", "Q", "RSE", "RET", "SLOT",
                 "SIM", "TCH", "INT", "ARG", "PTH", "TD001", "TD004", "TD005", "TD006",
-                "TD007", "PD", "PL", "TRY004", "TRY200", "TRY201", "TRY302", "TRY400",
-                "TRY401", "FLY", "NPY", "AIR", "PERF", "FURB", "LOG", "RUF",
+                "TD007", "PD003", "PD004", "PD007", "PD008", "PD009", "PD010", "PD011",
+                "PD012", "PD013", "PD015", "PL", "TRY004", "TRY200", "TRY201", "TRY302",
+                "TRY400", "TRY401", "FLY", "NPY", "AIR", "PERF", "FURB", "LOG", "RUF",
               },
             },
           },
@@ -118,11 +136,39 @@ return {
       -- YAML
       yamlls = {},
       -- TOML
-      taplo = {},
+      taplo = {
+        -- Workaround for nonsense of taplo being nonfunctional outside git directories
+        -- (https://github.com/helix-editor/helix/issues/3897#issuecomment-2361674437)
+        root_dir = util.root_pattern("*.toml", ".git"),
+
+        settings = {
+          taplo = {
+            -- Allow a more opinionated formatter
+            formatter = {
+              allowBlankLines = 1,
+              reorderInlineTables = true,
+              reorderKeys = true,
+            },
+          },
+        },
+      },
       -- Grammar
       -- ltex = {},
       -- Typst
-      tinymist = {},
+      tinymist = {
+        settings = {
+          -- Explicitly set formatter to enable it
+          formatterMode = "typstyle",
+          -- Set code line length
+          formatterPrintWidth = 79,
+          -- Allow soft text wrap
+          formatterProseWrap = true,
+          -- Lint as typed
+          lint = { when = "onType" },
+          -- Set root path to TYPST_ROOT if set or the current path
+          rootPath = vim.trim(vim.env.TYPST_ROOT or vim.fn.getcwd()),
+        },
+      },
       -- C / C++ / CUDA / Objective-C / Objective-C++
       clangd = {},
       -- Latex
@@ -131,6 +177,12 @@ return {
       gleam = {},
       -- Rust
       -- Configured by rusttools
+      -- Julia
+      julials = {
+        -- Disable project as it overrides the main
+        -- julia path where the LSP should be installed
+        cmd_env = { JULIA_PROJECT = "" },
+      },
       -- XML
       lemminx = {},
       -- General

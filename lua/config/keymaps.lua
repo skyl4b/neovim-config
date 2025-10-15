@@ -4,6 +4,7 @@
 
 -- Helper function for mappings
 local map = vim.keymap.set
+local del = vim.keymap.del
 
 -- System clipboard
 map({ "n", "v" }, "<leader>y", '"+y', {
@@ -32,6 +33,9 @@ map({ "n", "v" }, "U", ":redo<CR>", {
   noremap = true,
   silent = true,
 })
+-- High / Low of the screen (lazy overrides those)
+del("n", "<S-h>")
+del("n", "<S-l>")
 
 -- Terminal bindings
 --

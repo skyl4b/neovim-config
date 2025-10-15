@@ -7,7 +7,7 @@ return {
     -- Define linters
     linters_by_ft = {
       nix = { "nix", "statix" },
-      lua = { "luacheck" },
+      lua = { "selene" },
       dockerfile = { "hadolint" },
       -- gitcommit = { "commitlint" },
     },
@@ -15,6 +15,16 @@ return {
     -- Configure linters
     linters = {
       cmakelint = { cmd = "cmake-lint" },
+      selene = {
+        -- Only enable selene when
+        -- selene.toml is present
+        condition = function(ctx)
+          return vim.fs.find(
+            { "selene.toml" },
+            { path = ctx.filename, upward = true }
+          )[1]
+        end,
+      },
     },
   },
 }

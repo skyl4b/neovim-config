@@ -1,12 +1,12 @@
 -- Disable mason, install things manually
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     enabled = false,
     opts = { ensure_installed = {} },
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     enabled = false,
   },
   {

@@ -13,23 +13,8 @@ g.maplocalleader = ","
 -- Disable autoformat
 g.autoformat = false
 
--- HACK: force wl-clipboard for now as OSC52 is not fully supported
-g.clipboard = {
-  name = "OSC 52",
-  copy = {
-    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-  },
-  paste = {
-    ["+"] = function()
-      return {}
-    end,
-    ["*"] = function()
-      return {}
-    end,
-  },
-  cache_enabled = 1,
-}
+-- Set clipboard
+g.clipboard = "osc52"
 
 -- LazyVim specific globals
 --

@@ -71,6 +71,14 @@ return {
       desc = "Terminal run bottom",
     },
     {
+      "<leader>tg",
+      function()
+        Snacks.terminal("lazygit")
+      end,
+      mode = { "n", "v" },
+      desc = "Terminal run lazygit",
+    },
+    {
       "<leader>tp",
       function()
         Snacks.terminal("python3")
@@ -81,10 +89,18 @@ return {
     {
       "<leader>tj",
       function()
+        Snacks.terminal("julia")
+      end,
+      mode = { "n", "v" },
+      desc = "Terminal run julia",
+    },
+    {
+      "<leader>tJ",
+      function()
         Snacks.terminal("jupyter-console --no-confirm-exit")
       end,
       mode = { "n", "v" },
-      desc = "Terminal run Jupyter",
+      desc = "Terminal run jupyter",
     },
     {
       "<leader>tq",

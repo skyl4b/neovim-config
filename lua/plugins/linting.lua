@@ -1,3 +1,4 @@
+-- Configure linters for diagnostics
 return {
   "mfussenegger/nvim-lint",
   opts = {
@@ -16,13 +17,16 @@ return {
     linters = {
       cmakelint = { cmd = "cmake-lint" },
       selene = {
-        -- Only enable selene when
-        -- selene.toml is present
+        -- Only enable selene when selene.toml is present
+        ---@diagnostic disable-next-line: unused-local
         condition = function(ctx)
-          return vim.fs.find(
-            { "selene.toml" },
-            { path = ctx.filename, upward = true }
-          )[1]
+          local root = LazyVim.root.get({ normalize = true })
+          -- HACK: Selene searches the current path for the file
+          -- breaking the configuration on another path.
+          if root ~= vim.uv.cwd() then
+            return false
+          end
+          return vim.fs.find({ "selene.toml" }, { path = root, upward = true })[1]
         end,
       },
     },
